@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import type { Goal, Level, Status } from '@/lib/types';
 import { LEVEL_LABELS, LEVEL_ORDER, STATUS_LABELS } from '@/lib/types';
 import GoalsTable from './GoalsTable';
@@ -30,15 +31,7 @@ export default function GoalTracker({ initialGoals, initialTeams }: Props) {
     <div className="flex flex-col h-screen bg-[#0f0f0f] text-zinc-200">
       {/* Header */}
       <header className="flex items-center justify-center py-4 border-b border-[#1f1f1f] flex-shrink-0">
-        <div className="flex items-center gap-2">
-          {/* Fluidstack logo mark */}
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#22c55e" strokeWidth="1.5" strokeLinejoin="round" fill="none"/>
-            <path d="M2 17l10 5 10-5" stroke="#22c55e" strokeWidth="1.5" strokeLinejoin="round"/>
-            <path d="M2 12l10 5 10-5" stroke="#22c55e" strokeWidth="1.5" strokeLinejoin="round"/>
-          </svg>
-          <span className="text-sm font-semibold tracking-widest text-zinc-300 uppercase">Fluidstack</span>
-        </div>
+        <Image src="/logos/fluidstack_logo_white.svg" alt="Fluidstack" width={140} height={32} priority />
       </header>
 
       {/* Tab bar */}
@@ -66,7 +59,7 @@ export default function GoalTracker({ initialGoals, initialTeams }: Props) {
       </div>
 
       {/* Filter bar */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-[#1f1f1f] flex-shrink-0">
+      <div className="flex items-center gap-2 px-10 py-3 border-b border-[#1f1f1f] flex-shrink-0">
         {/* Search */}
         <input
           type="text"

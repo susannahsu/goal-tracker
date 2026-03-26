@@ -147,14 +147,14 @@ export default function GoalsTable({ goals, search, filterLevel, filterTeam, fil
     if (rows.length === 0) return null;
     return (
       <div>
-        <div className="px-4 py-3 border-b border-[#1f1f1f]">
+        <div className="py-3 border-b border-[#1f1f1f]">
           <span className="text-xs font-semibold tracking-widest text-zinc-400 uppercase">{label}</span>
         </div>
         <table className="w-full">
           <thead>
             <tr className="border-b border-[#1f1f1f]">
               {colHeaders.map((h) => (
-                <th key={h} className="py-2 px-4 text-left text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap">
+                <th key={h} className="py-2 px-4 text-left text-xs font-medium text-zinc-600 uppercase tracking-wider whitespace-nowrap first:pl-0">
                   {h}
                 </th>
               ))}
@@ -174,7 +174,7 @@ export default function GoalsTable({ goals, search, filterLevel, filterTeam, fil
 
   return (
     <div className="flex-1 overflow-auto">
-      <div className="min-w-[900px]">
+      <div className="min-w-[900px] px-10">
         {!hasResults ? (
           <div className="flex flex-col items-center justify-center py-24 text-zinc-600">
             <p className="text-lg">No goals match your filters.</p>
