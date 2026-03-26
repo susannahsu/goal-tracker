@@ -1,8 +1,9 @@
 import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/vercel-postgres';
-import { sql } from '@vercel/postgres';
+import { drizzle } from 'drizzle-orm/neon-http';
+import { neon } from '@neondatabase/serverless';
 import { goals } from '../src/lib/schema';
 
+const sql = neon(process.env.GOAL_TRACKER_POSTGRES_URL!);
 const db = drizzle(sql);
 
 async function main() {
